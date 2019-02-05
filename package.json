@@ -7,5 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kasper Mróz",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaspermroz/react-webpack.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/kaspermroz/react-webpack/issues"
+  },
+  "homepage": "https://github.com/kaspermroz/react-webpack#readme"
 }
