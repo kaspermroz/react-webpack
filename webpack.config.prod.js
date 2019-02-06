@@ -6,7 +6,13 @@ module.exports = merge(base, {
   mode: "production",
   plugins: [
     new BundleAnalyzerPlugin({
-      analyzerMode: "static"
+      analyzerMode: "static",
+      openAnalyzer: false,
+      reportFilename: "bundle_size.html"
     })
-  ]
+  ],
+  externals: {
+    react: "React",
+    "react-dom": "ReactDOM"
+  }
 });
