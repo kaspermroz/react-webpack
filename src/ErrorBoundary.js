@@ -4,10 +4,17 @@ import PropTypes from 'prop-types'
 export default class ErrorBoundary extends React.Component {
   state = {
     isError: false,
+    stackTrace: '',
   }
 
   static propTypes = {
     children: PropTypes.array.isRequired,
+  }
+
+  componentDidCatch(error, info) {
+    this.setState({
+      stackTrace: info.componentStack,
+    })
   }
 
   static getDerivedStateFromError() {
@@ -15,8 +22,8 @@ export default class ErrorBoundary extends React.Component {
   }
 
   render() {
-    const { isError } = this.state
+    const { isError, stackTrace } = this.state
     const { children } = this.props
-    return isError ? <div>Oops! An error occured.</div> : children
+    return isError ? <div>Oops! An error occured {stackTrace}</div> : children
   }
 }
