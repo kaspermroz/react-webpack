@@ -7,11 +7,12 @@
     "test": "jest",
     "dev": "webpack-dev-server --open --config webpack.config.dev.js",
     "dev:hot": "npm run dev -- --hot",
-    "build": "webpack --config webpack.config.prod.js"
+    "build": "webpack --config webpack.config.prod.js",
+    "lint": "eslint ./"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && eslint ./"
+      "pre-commit": "npm run lint && npm test"
     }
   },
   "author": "Kasper Mróz",
