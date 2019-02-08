@@ -8,7 +8,7 @@ export default class ErrorBoundary extends React.Component {
   }
 
   static propTypes = {
-    children: PropTypes.array.isRequired,
+    children: PropTypes.node.isRequired,
   }
 
   componentDidCatch(error, info) {
