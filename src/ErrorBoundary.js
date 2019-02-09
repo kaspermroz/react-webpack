@@ -1,7 +1,17 @@
+// @flow
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default class ErrorBoundary extends React.Component {
+type State = {
+  isError: boolean,
+  stackTrace: string,
+}
+
+type Props = {
+  children: Array<*>,
+}
+
+export default class ErrorBoundary extends React.Component<Props, State> {
   state = {
     isError: false,
     stackTrace: '',
@@ -11,7 +21,7 @@ export default class ErrorBoundary extends React.Component {
     children: PropTypes.node.isRequired,
   }
 
-  componentDidCatch(error, info) {
+  componentDidCatch(error: any, info: any) {
     this.setState({
       stackTrace: info.componentStack,
     })
