@@ -1,8 +1,12 @@
 [ignore]
+.*/dist/.*
+.*/__tests__/.*
+.*/node_modules/.*
 
 [include]
 
 [libs]
+.*/flow-typed/.*
 
 [lints]
 
