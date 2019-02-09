@@ -4,12 +4,16 @@
 .*/node_modules/.*
 
 [include]
+.*/src/.*
 
 [libs]
-.*/flow-typed/.*
-
+interfaces
+flow-typed
 [lints]
 
 [options]
+module.name_mapper.extension='css' -> 'CSSModule'
+module.name_mapper.extension='scss' -> 'CSSModule'
+module.system=haste
 
 [strict]

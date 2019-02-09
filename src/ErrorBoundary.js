@@ -1,5 +1,5 @@
 // @flow
-import React from 'react'
+import * as React from 'react'
 import PropTypes from 'prop-types'
 
 type State = {
@@ -8,7 +8,7 @@ type State = {
 }
 
 type Props = {
-  children: Array<*>,
+  children: React.ChildrenArray<React.Node>,
 }
 
 export default class ErrorBoundary extends React.Component<Props, State> {
@@ -21,13 +21,13 @@ export default class ErrorBoundary extends React.Component<Props, State> {
     children: PropTypes.node.isRequired,
   }
 
-  componentDidCatch(error: any, info: any) {
+  componentDidCatch(error: Error, info: { componentStack: string }): void {
     this.setState({
       stackTrace: info.componentStack,
     })
   }
 
-  static getDerivedStateFromError() {
+  static getDerivedStateFromError(): { isError: boolean } {
     return { isError: true }
   }
 
