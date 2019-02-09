@@ -4,6 +4,7 @@
   "description": "React App Boilerplate",
   "main": "index.js",
   "scripts": {
+    "init": "npm install && flow-typed install",
     "test": "jest",
     "dev": "webpack-dev-server --open --config webpack.config.dev.js",
     "dev:hot": "npm run dev -- --hot",
