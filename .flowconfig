@@ -7,8 +7,9 @@
 .*/src/.*
 
 [libs]
-interfaces
 flow-typed
+interfaces
+
 [lints]
 
 [options]
