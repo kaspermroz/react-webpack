@@ -1,4 +1,5 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import ReactDOM from 'react-dom'
 import './styles/index.scss'
 import '@babel/polyfill'
@@ -10,11 +11,15 @@ if (process.env.NODE_ENV === 'development') {
   axe(React, ReactDOM, 1000)
 }
 
-ReactDOM.render(
-  <React.StrictMode>
-    <ErrorBoundary>
-      <App />
-    </ErrorBoundary>
-  </React.StrictMode>,
-  document.getElementById('root'),
-)
+const root = document.getElementById('root')
+
+if (root !== null) {
+  ReactDOM.render(
+    <React.StrictMode>
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
+    </React.StrictMode>,
+    root,
+  )
+}

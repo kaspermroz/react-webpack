@@ -12,12 +12,12 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /flow-typed/],
       },
       {
         test: /\.(sc|c)ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /flow-typed/],
       },
     ],
   },
